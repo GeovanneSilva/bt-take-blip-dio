@@ -1,7 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oleo+Script&display=swap");
+
 :root {
   --vermelho: #e50014;
   --preta: #141414;
   --branco: #fff;
+  --font: "Bebas Neue", cursive;
+  --house-font: "Oleo Script", cursive;
 }
 
 * {
@@ -9,10 +13,11 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+/*elementos base*/
 body {
   background: var(--preta);
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Arial", Times, serif;
+  color: var(--branco);
 }
 
 header .container {
@@ -24,7 +29,9 @@ header .container {
 
 header .logo {
   color: var(--vermelho);
-  font-family: "Arial Black", Times;
+  font-family: var(--font);
+  font-size: 45px;
+  margin-left: 25px;
 }
 
 header nav a {
@@ -35,4 +42,90 @@ header nav a {
 
 header nav a:hover {
   color: var(--branco);
+}
+
+main div h3.title {
+  text-transform: uppercase;
+}
+
+/*filme principal*/
+
+.filme-principal {
+  font-size: 16px;
+  font-family: "Arial", times;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%),
+    url("../src/capa-house.jpg");
+
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.filme-principal .description {
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.filme-principal .title {
+  margin-top: 15%;
+  font-size: 40px;
+}
+
+.btn {
+  text-transform: uppercase;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: var(--branco);
+  padding: 15px 30px;
+  margin-right: 5px;
+  transition: 0.3s ease all;
+}
+
+.btn i {
+  margin-right: 15px;
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: var(--preta);
+  cursor: pointer;
+}
+
+.filme-principal .container {
+  margin-left: 20px;
+  width: 70%;
+}
+
+.box-filme {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+.carrosel-filmes {
+  margin-top: 5px;
+}
+
+/* Medias Querys Responssive */
+
+@media screen and (max-width: 700px) {
+  header .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .btn {
+    margin-top: 5px;
+    width: 190px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .description {
+    width: 50%;
+  }
 }
